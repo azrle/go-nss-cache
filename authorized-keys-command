@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my $SSH_KEYS_FILE = '/etc/sshkeys.cache';
+my $target_user = $ARGV[0];
+
+if (defined $target_user && -e $SSH_KEYS_FILE) {
+    open my $fh, '<', $SSH_KEYS_FILE or die "Cannot open cache file $SSH_KEYS_FILE: $!";
+    while (my $line = <$fh>) {
+        chomp $line;
+        my ($username, $ssh_key) = split ':', $line;
+        next unless defined $username && defined $ssh_key;
+        if ($target_user eq $username) {
+            print $ssh_key;
+            last;
+        }
+    }
+}
+
+exit 0;
