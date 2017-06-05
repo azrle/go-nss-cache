@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-my $SSH_KEYS_FILE = '/etc/sshkeys.cache';
+my $SSH_KEYS_FILE = '/etc/sshkey.cache';
 my $target_user = $ARGV[0];
 
 if (defined $target_user && -e $SSH_KEYS_FILE) {
