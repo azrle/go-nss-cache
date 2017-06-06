@@ -1,0 +1,11 @@
+[Unit]
+Description=NSS cache files sync daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/sbin/go-nss-cache -logtostderr
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=go-nss-cache.service
