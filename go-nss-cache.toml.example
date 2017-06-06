@@ -2,8 +2,8 @@ updateInterval = "5s"
 source         = "gce_metadata"
 
 [GCEMetadata]
-primaryGid = "1101"
-keyPrefix  = "project/attributes/"
-userKey    = "nss-users"
-groupKey   = "nss-groups"
-homeDir    = "/home"
+primaryGid  = "1101"
+keyPrefix   = "project/attributes/"
+userKey     = "nss-users"
+groupKey    = "nss-groups"
+homeDirBase = "/home"
